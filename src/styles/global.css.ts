@@ -1,5 +1,5 @@
 // DEPENDENCY
-import { createGlobalTheme } from '@vanilla-extract/css'
+import { globalStyle, createGlobalTheme } from '@vanilla-extract/css'
 
 // THEME
 export const vars = createGlobalTheme(':root', {
@@ -44,4 +44,54 @@ export const vars = createGlobalTheme(':root', {
       bold: '700',
     },
   },
+})
+
+// CSS RESET
+/* 1. Use a more-intuitive box-sizing model. */
+globalStyle('*, *::before, *::after', {
+  boxSizing: 'border-box',
+})
+
+/* 2. Remove default margin and padding & built-in form typography styles */
+globalStyle('*', {
+  margin: 0,
+  padding: 0,
+  font: 'inherit',
+})
+
+/* 3. Allow percentage-based heights in the application */
+globalStyle('html, body, #root', {
+  height: '100%',
+})
+
+/*
+  4. Implement base background color, font and font family
+
+  Typographic tweaks!
+  5. Add accessible line-height
+  6. Improve text rendering
+*/
+globalStyle('body', {
+  backgroundColor: vars.color.gray[900],
+  color: vars.color.gray[300],
+  fontFamily: vars.font.family.sans,
+  lineHeight: 1.7,
+  WebkitFontSmoothing: 'antialiased',
+  MozOsxFontSmoothing: 'grayscale',
+})
+
+/* 7. Improve media defaults */
+globalStyle('img, picture, video, canvas, svg', {
+  display: 'block',
+  maxWidth: '100%',
+})
+
+/* 8. Remove built-in form typography styles */
+globalStyle('input, button, textarea, select, a', {
+  font: 'inherit',
+})
+
+/* 9. Avoid text overflows */
+globalStyle('p, h1, h2, h3, h4, h5, h6', {
+  overflowWrap: 'break-word',
 })
