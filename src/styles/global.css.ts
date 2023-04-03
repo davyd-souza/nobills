@@ -72,7 +72,7 @@ globalStyle('html, body, #root', {
   6. Improve text rendering
 */
 globalStyle('body', {
-  backgroundColor: vars.color.gray[900],
+  backgroundColor: vars.color.gray[800],
   color: vars.color.gray[300],
   fontFamily: vars.font.family.sans,
   lineHeight: 1.7,
