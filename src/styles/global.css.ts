@@ -73,7 +73,7 @@ globalStyle('html, body, #root', {
 */
 globalStyle('body', {
   backgroundColor: vars.color.gray[800],
-  color: vars.color.gray[300],
+  color: vars.color.gray[100],
   fontFamily: vars.font.family.sans,
   lineHeight: 1.7,
   WebkitFontSmoothing: 'antialiased',
