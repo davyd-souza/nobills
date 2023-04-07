@@ -31,7 +31,7 @@ export const SummaryCard = recipe({
   variants: {
     variant: {
       yellow: {
-        backgroundColor: vars.color.yellow[400],
+        backgroundColor: vars.color.yellow[300],
         color: vars.color.gray[700],
       },
       gray: {
