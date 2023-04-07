@@ -1,12 +1,10 @@
-// COMPONENT
-import { Header } from './components/Header'
-import { Summary } from './components/Summary'
+// PAGE
+import { Transactions } from './pages/Transactions'
 
 export function App() {
   return (
     <>
-      <Header />
-      <Summary />
+      <Transactions />
     </>
   )
 }

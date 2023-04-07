@@ -11,10 +11,11 @@ export const SummaryWrapper = style({
   paddingInline: '1.5rem',
 
   display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
+  gridAutoFlow: 'column',
   gap: '2rem',
 
   marginBlockStart: '-5rem',
+  marginBlockEnd: '5rem',
 })
 
 export const SummaryCard = recipe({
