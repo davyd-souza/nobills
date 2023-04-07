@@ -95,3 +95,8 @@ globalStyle('input, button, textarea, select, a', {
 globalStyle('p, h1, h2, h3, h4, h5, h6', {
   overflowWrap: 'break-word',
 })
+
+globalStyle(':focus-visible', {
+  outline: 0,
+  boxShadow: `0 0 0 2px ${vars.color.gray[800]}, 0 0 0 4px ${vars.color.yellow[200]}`,
+})
