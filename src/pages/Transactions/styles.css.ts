@@ -6,6 +6,9 @@ export const TableWrapper = style({
   maxWidth: '70rem',
   marginInline: 'auto',
   paddingInline: '1.5rem',
+
+  display: 'grid',
+  gap: '1.5rem',
 })
 
 export const Table = style({

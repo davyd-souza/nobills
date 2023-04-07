@@ -1,6 +1,7 @@
 // COMPONENT
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
+import { SearchForm } from './components/SearchForm'
 
 // STYLE
 import { TableWrapper, Table, PriceHighlight } from './styles.css'
@@ -12,6 +13,8 @@ export function Transactions() {
       <Summary />
 
       <main className={TableWrapper}>
+        <SearchForm />
+
         <table className={Table}>
           <tbody>
             <tr>
