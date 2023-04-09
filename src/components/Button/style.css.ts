@@ -17,7 +17,7 @@ export const button = recipe({
     paddingBlock: '0.75em',
 
     fontWeight: vars.font.weight.bold,
-    borderRadius: 18,
+    borderRadius: '1rem',
 
     transition: 'background-color 200ms',
 

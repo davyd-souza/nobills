@@ -1,5 +1,5 @@
 // DEPENDENCY
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, forwardRef } from 'react'
 
 // STYLE
 import { button, ButtonVariants } from './style.css'
@@ -7,10 +7,12 @@ import { button, ButtonVariants } from './style.css'
 // TYPE
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & ButtonVariants & {}
 
-export function Button({ children, variant = 'fill', ...props }: ButtonProps) {
-  return (
-    <button {...props} className={button({ variant })}>
-      {children}
-    </button>
-  )
-}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  function Button({ children, variant = 'fill', ...props }: ButtonProps, ref) {
+    return (
+      <button {...props} className={button({ variant })} ref={ref}>
+        {children}
+      </button>
+    )
+  },
+)
