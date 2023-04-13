@@ -7,11 +7,14 @@ import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
 import { SearchForm } from './components/SearchForm'
 
+// CONTEXT
+import { TransactionsContext } from '../../contexts/TransactionsContext'
+
 // STYLE
 import { TableWrapper, Table, PriceHighlight } from './styles.css'
 
-// CONTEXT
-import { TransactionsContext } from '../../contexts/TransactionsContext'
+// UTIL
+import { priceFormatter } from '../../utils/formatter'
 
 export function Transactions() {
   const { transactions } = useContext(TransactionsContext)
@@ -32,7 +35,7 @@ export function Transactions() {
                   <td>{description}</td>
                   <td>
                     <span className={PriceHighlight[type]}>
-                      $ {price.toLocaleString()}
+                      {type === 'outcome' && '-'} {priceFormatter.format(price)}
                     </span>
                   </td>
                   <td>{category}</td>

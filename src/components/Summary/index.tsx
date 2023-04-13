@@ -16,6 +16,9 @@ import {
 } from './styles.css'
 import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from 'phosphor-react'
 
+// UTIL
+import { priceFormatter } from '../../utils/formatter'
+
 // TYPE
 type SummaryArticleProps = SummaryCardVariants & {}
 
@@ -49,7 +52,7 @@ export function Summary({ variant = 'gray' }: SummaryArticleProps) {
           <ArrowCircleUp size={32} color={vars.color.green[500]} />
         </header>
         <strong className={SummaryAmount}>
-          $ {summary.income.toLocaleString()}
+          {priceFormatter.format(summary.income)}
         </strong>
       </article>
 
@@ -59,7 +62,7 @@ export function Summary({ variant = 'gray' }: SummaryArticleProps) {
           <ArrowCircleDown size={32} color={vars.color.red[500]} />
         </header>
         <strong className={SummaryAmount}>
-          $ {summary.outcome.toLocaleString()}
+          {priceFormatter.format(summary.outcome)}
         </strong>
       </article>
 
@@ -69,7 +72,7 @@ export function Summary({ variant = 'gray' }: SummaryArticleProps) {
           <CurrencyDollar size={32} color={vars.color.gray[800]} />
         </header>
         <strong className={SummaryAmount}>
-          $ {summary.total.toLocaleString()}
+          {priceFormatter.format(summary.total)}
         </strong>
       </article>
     </section>
