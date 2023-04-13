@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Salary",
+      "type": "income",
+      "category": "Work",
+      "price": 3500,
+      "createdAt": "2023-04-01T09:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "description": "Apartment's rent",
+      "type": "outcome",
+      "category": "Home",
+      "price": 1200,
+      "createdAt": "2023-04-12T12:00:00.000Z"
+    }
+  ]
+}
