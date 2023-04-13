@@ -1,4 +1,8 @@
+// DEPENDENCY
+import dayjs from 'dayjs'
+
 // COMPONENT
+import { useEffect, useState } from 'react'
 import { Header } from '../../components/Header'
 import { Summary } from '../../components/Summary'
 import { SearchForm } from './components/SearchForm'
@@ -6,7 +10,25 @@ import { SearchForm } from './components/SearchForm'
 // STYLE
 import { TableWrapper, Table, PriceHighlight } from './styles.css'
 
+// TYPE
+type Transaction = {
+  id: number
+  description: string
+  type: 'income' | 'outcome'
+  price: number
+  category: string
+  createdAt: string
+}
+
 export function Transactions() {
+  const [transactions, setTransactions] = useState<Transaction[]>([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/transactions')
+      .then((res) => res.json())
+      .then((data) => setTransactions(data))
+  }, [])
+
   return (
     <div>
       <Header />
@@ -17,38 +39,20 @@ export function Transactions() {
 
         <table className={Table}>
           <tbody>
-            <tr>
-              <td>Freelance as GM for Dante&apos;s TTRPG</td>
-              <td>
-                <span className={PriceHighlight.income}>$ 5,000.00</span>
-              </td>
-              <td>Work</td>
-              <td>05/04/2023</td>
-            </tr>
-            <tr>
-              <td>Eat sushi</td>
-              <td>
-                <span className={PriceHighlight.outcome}>- $ 89.00</span>
-              </td>
-              <td>Food</td>
-              <td>04/04/2023</td>
-            </tr>
-            <tr>
-              <td>Apartment&apos;s rent</td>
-              <td>
-                <span className={PriceHighlight.outcome}>- $ 1,200.00</span>
-              </td>
-              <td>Home</td>
-              <td>01/04/2023</td>
-            </tr>
-            <tr>
-              <td>Salary</td>
-              <td>
-                <span className={PriceHighlight.income}>$ 3,500.00</span>
-              </td>
-              <td>Work</td>
-              <td>05/04/2023</td>
-            </tr>
+            {transactions.map(
+              ({ id, description, type, price, category, createdAt }) => (
+                <tr key={id}>
+                  <td>{description}</td>
+                  <td>
+                    <span className={PriceHighlight[type]}>
+                      $ {price.toLocaleString()}
+                    </span>
+                  </td>
+                  <td>{category}</td>
+                  <td>{dayjs(createdAt).format('DD/MM/YYYY')}</td>
+                </tr>
+              ),
+            )}
           </tbody>
         </table>
       </main>
