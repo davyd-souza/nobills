@@ -31,12 +31,17 @@ export const button = recipe({
         color: vars.color.gray[900],
 
         selectors: {
-          '&:hover': {
+          '&:not(:disabled):hover': {
             backgroundColor: vars.color.yellow[200],
           },
 
           '&:focus-visible': {
             boxShadow: `0 0 0 2px ${vars.color.gray[800]}, 0 0 0 4px ${vars.color.yellow[200]}`,
+          },
+
+          '&:disabled': {
+            cursor: 'not-allowed',
+            opacity: 0.6,
           },
         },
       },
@@ -50,13 +55,18 @@ export const button = recipe({
         color: vars.color.yellow[400],
 
         selectors: {
-          '&:hover': {
+          '&:not(:disabled):hover': {
             borderColor: vars.color.yellow[200],
             color: vars.color.yellow[200],
           },
 
           '&:focus-visible': {
             boxShadow: `0 0 0 2px ${vars.color.gray[800]}, 0 0 0 4px ${vars.color.yellow[200]}`,
+          },
+
+          '&:disabled': {
+            cursor: 'not-allowed',
+            opacity: 0.6,
           },
         },
       },
