@@ -3,7 +3,7 @@
   Track your expanses to help you get rid of your bills!
 </p>
 <p align="center">
-	<img src="" alt="Application layout" />
+	<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGE3MTNiZGI5ZjU2NjlmYzQ5YmU5ZDg2ZGZmNGIwOTU3OWJiN2FjOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Q2ET8B7l4mjdfaT6Q4/giphy.gif" alt="Application layout" />
 </p>
 
 <p align="center">
