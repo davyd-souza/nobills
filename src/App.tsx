@@ -1,6 +1,8 @@
 // PAGE
-import { TransactionsProvider } from './contexts/TransactionsContext'
 import { Transactions } from './pages/Transactions'
+
+// CONTEXT
+import { TransactionsProvider } from './contexts/TransactionsContext'
 
 export function App() {
   return (

@@ -1,5 +1,5 @@
 // DEPENDENCY
-import { useContext } from 'react'
+import { useContextSelector } from 'use-context-selector'
 import dayjs from 'dayjs'
 
 // COMPONENT
@@ -17,7 +17,10 @@ import { TableWrapper, Table, PriceHighlight } from './styles.css'
 import { priceFormatter } from '../../utils/formatter'
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionsContext)
+  const transactions = useContextSelector(
+    TransactionsContext,
+    (context) => context.transactions,
+  )
 
   return (
     <div>
